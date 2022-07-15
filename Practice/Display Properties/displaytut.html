@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Display Properties</title>
+
+        <style>
+            body {
+                font-size: 22px;
+                font-family: 'Segoe UI';
+                box-sizing: border-box;
+                background-color: rgb(62, 62, 102);
+            }
+
+            #div-1 {
+                /* display: block; */
+                background-color: aqua;
+            }
+            
+            #span-1 {
+                /* display: inline; */
+                background-color: maroon;
+                color: wheat;
+            }
+            
+            #span-2 {
+                background-color: violet;
+                color: wheat;
+            }
+
+            #div-2 {
+                background-color: chocolate;
+            }
+
+            img {
+                /* display: inline-block; */
+                width: 100px; height: 100px;
+            }
+
+            p span {
+                color: tan;
+            }
+
+        </style>
+    </head>
+    
+    <body>
+        <div id="div-1"><p>This is a div - divs by default are <u>display: block</u> (uses newline/linebreaks above and below)</p></div>   
+        <span id="span-1">This is a span - uses <u>display: inline</u> (takes minimum amount of space, no newline)</span>
+        <img id="img" src="https://cdn-icons-png.flaticon.com/512/5360/5360936.png"  title="Images by default have the display: inline-block style, behaves the same as inline but can have custom width and height, no minimum space rule" alt="">
+        <span id="span-2">This is another span</span>
+        <div id="div-2"><p>This is a div</p></div>
+        <p><span>Other most commonly used display properties are <u>display: flex</u> and <u>display: grid</u>, they have much more to them and will be covered in a separate file </span></p>
+    </body>
+</html>
