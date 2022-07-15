@@ -16,16 +16,17 @@
             .Parent {
                 background-color: darkcyan;
                 padding: 10px;
+                /* position: relative; */
+                /* height: 200vh; */
             }
             
             .Parent div {
                 padding: 10px;
-                /* position: relative; */
             }
 
             .first-child {
                 background-color: coral;
-                position: relative;
+                /* position: relative; */
                 /* top: -10px; */
             }
 
@@ -37,7 +38,8 @@
 
             .third-child {
                 background-color: violet;
-                position: fixed;
+                /* position: sticky;
+                top: 0; */
             }
 
         </style>
@@ -45,21 +47,24 @@
 
     <body>
         <div class="Parent">Parent
-            <div class="first-child child">One</div>
-            <div class="second-child child">Two</div>
-            <div class="third-child child">Three</div>
+            <div class="first-child">One</div>
+            <div class="second-child">Two</div>
+            <div class="third-child">Three</div>
         </div>
         <div id="notes">
-            <p>By default all HTML elements have the position property as 'static'. It is the regular flow of positioning in HTML.</p>
-            <p>Relative position is similar to static but it allows for using the 'top', 'left', 'right' and 'bottom' properties.<br>
+            <p>⚝ By default all HTML elements have the position property as 'static'. It is the regular flow of positioning in HTML.</p>
+            <p>⚝ Relative position is similar to static but it allows for using the 'top', 'left', 'right' and 'bottom' properties.<br>
             These properties make the element dislocate from it's static position to whatever is specified.<br>
             Relative positioning causes the original space to still be taken up. This can cause overflowing of one element onto the next one.</p>
-            <p>Absolute position takes the element out of the normal document flow completely. No space is left in place of the actual element like it does in relative positioning.</p>
+            <p>⚝ Absolute position takes the element out of the normal document flow completely. No space is left in place of the actual element like it does in relative positioning.</p>
             <p style="color: rgb(142, 0, 0); text-decoration: 1px solid underline;">
                 Absolute position by default 'absolutely' positions the element it is applied to. By that it means that it will take the 'body' as the 'parent' of the element.<br>
                 To have a <span style="color: red; text-decoration: 1px double underline;">absolutely positioned child element</span> inside a parent element, the <span style="color: red; text-decoration: 1px double underline;">parent element</span> has not to be static but <span style="color: red; text-decoration: 1px double underline;">anything else (relative, absolute, sticky, fixed).</span>
             </p>
-            <p>Fixed position works and behaves like absolute position only thing is that when the page is scrolled, the element still stays right where it was initially throughout the page</p>
+            <p>⚝ Fixed position works and behaves like Absolute position only thing is that when the page is scrolled, the element still stays right where it was initially throughout the page.</p>
+            <p>⚝ Sticky positioning is essentially a combination of Relative and Fixed positioning. The element will be relatively positioned initially and then becomes fixed when the element is at the top of the parent while scrolling.</p>
         </div>
     </body>
 </html>
+
+<!-- couldn't get the sticky position to work with just the child element ~ could only do it when the parent's height was changed to 200vh and not body's -->
