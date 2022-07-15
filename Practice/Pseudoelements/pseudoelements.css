@@ -1,0 +1,66 @@
+:root {
+    --cstm-grey: rgb(32, 32, 32);
+}
+/*+ V. IMP: Use Chrome Inspect page to see the placement of the pseudoelements and how padding affects them */
+/*+  Hover over the 'text' and the pseudoelement(s) */
+/*+ pse - Pseudo Element */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*::after, *::before{box-sizing: border-box;}
+
+body {
+    background-color: var(--cstm-grey);
+    font-size: 25px;
+    font-family: 'Segoe UI';
+    color: white;
+}
+
+#main {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+   
+    border: 1px solid white;
+    padding: 10px;
+    /*! Important to note that padding is always applied to the content of the element, this is why pseudoelements are pushed away by it too (on all sides, even left and right)*/
+}
+
+#main::before {
+    /* very important, telling it the content is nothing instead of the default of content being none. Without this the 'PsE' will not appear */
+    content: '';
+    display: block;
+    /* By default the display property is inline for pseudoelements */
+    position: absolute;
+    /*TODO As pse is absolutely positioned inside the tag which is relatively/absolutely positioned, it will take the parent element to absolutely position itself and not the 'body' */
+    /* Display block's effect is nullified after using absolute positioning */
+    top: -5px; left: 15px;
+    width: 20px; height: 10px;
+
+    background-color: var(--cstm-grey);
+    border: 1px solid white;
+    transition: background-color .5s;
+}
+
+#main::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -5px; right: 15px;
+    /* By default the display property is inline */
+    width: 20px; height: 10px;
+    
+    background-color:var(--cstm-grey);  
+    border: 1px solid white;
+    transition: background-color .5s;
+}
+
+#main:hover::after, #main:hover::before {
+    background-color: brown;
+}
+
+/*+ IMP: Each valid element for pse can only have one before and one after pse! */
