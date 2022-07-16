@@ -27,20 +27,22 @@ body {
    
     border: 1px solid white;
     padding: 10px;
-    /*! Important to note that padding is always applied to the content of the element, this is why pseudoelements are pushed away by it too (on all sides, even left and right)*/
+    /*! IMPORTANT to note that padding is always applied to the content of the element, and PsEs are counted as content of the element as they are inside it as well */
 }
 
 #main::before {
-    /* very important, telling it the content is nothing instead of the default of content being none. Without this the 'PsE' will not appear */
+    /** V. IMP, telling it the content is nothing instead of the default of content being none. Without this the 'PsE' will not appear */
     content: '';
     display: block;
-    /* By default the display property is inline for pseudoelements */
+    /* By default the display property is inline for pseudoelements. Display block's effect is nullified after using absolute positioning  */
+    
     position: absolute;
-    /*TODO As pse is absolutely positioned inside the tag which is relatively/absolutely positioned, it will take the parent element to absolutely position itself and not the 'body' */
-    /* Display block's effect is nullified after using absolute positioning */
+    /*+ As pse is absolutely positioned inside the tag which is relatively/absolutely positioned, it will take the ""content"" of the parent element to absolutely position itself and not the 'body' */
+    
     top: -5px; left: 15px;
+    /*! As padding was applied to the main element, the pseudoelement does have a default value corresponding to the padding of the main element to have it positioned exactly at the origin(top-left corner) of the """content""" of the main element */
+    
     width: 20px; height: 10px;
-
     background-color: var(--cstm-grey);
     border: 1px solid white;
     transition: background-color .5s;
@@ -51,7 +53,6 @@ body {
     display: block;
     position: absolute;
     bottom: -5px; right: 15px;
-    /* By default the display property is inline */
     width: 20px; height: 10px;
     
     background-color:var(--cstm-grey);  
@@ -63,4 +64,4 @@ body {
     background-color: brown;
 }
 
-/*+ IMP: Each valid element for pse can only have one before and one after pse! */
+/*+ IMP: Each valid element for pse can only have !one before! and !one after! pse!! */
