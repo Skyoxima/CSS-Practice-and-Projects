@@ -22,7 +22,8 @@ body {
     padding: 20px;
     font-size: 35px;
 
-    z-index: 1;
+    background: linear-gradient(to right, red, blue);
+    color: white;
     border: none;
 }
 
@@ -30,7 +31,16 @@ body {
     content: '';
     display: block;
     position: absolute;
-    width: 100%; height: 100%;
     z-index: -1;
-    background: linear-gradient(to top right, red, blue);
+    inset: 2px; 
+    /* Inset is quite powerful, the value provided is the size by which the pse is smaller than main element on all sides. Even the positioning happens automatically */
+    background: var(--cstm-grey);
+}
+
+#submit-button:hover {
+    background: linear-gradient(to left, red, blue);
+    letter-spacing: 0.1em;
+    transition: background .5s,
+                letter-spacing .6s;  
+    /* Transitioning gradients is not yet supported */
 }
