@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-width: 100vw; min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    
+    font-size: 30px;
+    font-family: 'Segoe UI';
+    
+    color: white;
+    background-color: rgb(35, 35, 35);
+}
+
+a {
+    position: relative;
+    color: white;
+    text-decoration: none;
+    background: var(--bgcolor);
+    
+    padding: 10px 20px;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+a:hover {
+    letter-spacing: 0.25em;
+    box-shadow: 0 0 30px var(--bgcolor);
+    color: var(--bgcolor);
+}
+
+a::before {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    background-color: rgb(35, 35, 35);
+}
+
+a span {
+    position: relative;
+    z-index: 1;
+}
+
+a i {
+    position: absolute;
+    /* Since anchor tag is relatively positioned, 'i' will be taking it's content to absolutely position it by default */
+    display: block;
+    inset: 0;
+    /* Inset is done to give 'i' to make it have a definite shape and size which by default it doesn't*/
+    /* Inset 0 made it equal to the entire block of anchor tag (since no border) */
+}
+
+a i::before {
+    content: '';
+    position: absolute;
+    /*! This before is taking the content of i tag to absolutely position it, remember that */
+    width: 10px; height: 2px;
+    left: 80%;   
+    /* Because of the i tag's space being equal to that of the anchor tag itself this 80% gives the effect as if the pse of i tag is 80% from the left of anchor tag but it actually used i tag itself as it should */
+    transform: translateX(-50%) skew(325deg);
+    /* Translate-X shifts the X coord of the elements origin */
+    background-color: rgb(35, 135, 135);
+}
