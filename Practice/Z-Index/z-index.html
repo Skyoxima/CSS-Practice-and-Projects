@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Z-Index Intro</title>
+        
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                min-height: 100vh;
+                background-color: rgb(135, 135, 135);
+                font-size: 35px; color: white;
+            }
+            
+            #ggrandparent {
+                width: 800px; height: 800px;
+                background-color: rgba(143, 188, 143, 1);
+                position: absolute;
+                top: 100px; left: 100px;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            #grandparent {
+                width: 400px; height: 400px;
+                position: absolute;
+                /* top: 100px; left: 100px; */
+                background-color: rgba(71, 61, 139, 1);
+                
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                /* filter: blur(1px); */
+                /* backdrop-filter: blur(10px); */
+            }
+
+            #parent {
+                width: 200px; height: 200px;
+                position: absolute;
+                /* left: 500px; */
+                /* top: 100px; left: 100px; */
+                background-color: rgba(255, 140, 0, 1);
+                
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            #child {
+                width: 150px; height: 150px;
+                background-color: darkred;
+                position: absolute;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="ggrandparent">
+            <div id="grandparent">            
+                <div id="parent">
+                    <div id="child"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+<!--+ Using filter of any kind nullifies/modifies the effects of z-index!!! -->
