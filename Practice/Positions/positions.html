@@ -54,18 +54,19 @@
         <div id="notes">
             <p>⚝ By default all HTML elements have the position property as 'static'. It is the regular flow of positioning in HTML.</p>
             
-            <p>⚝ Relative position is similar to static but it allows for using the 'top', 'left', 'right' and 'bottom' properties.<br>
+            <p>⚝ <span style="text-decoration: 1px solid underline;">Relative position</span> is similar to static but it allows for using the 'top', 'left', 'right' and 'bottom' properties.<br>
             These properties make the element dislocate from it's static position to whatever is specified.<br>
             Relative positioning causes the original space to still be taken up. This can cause overflowing of one element onto the next one.</p>
             
-            <p>⚝ Absolute position takes the element out of the normal document flow completely. No space is left in place of the actual element like it does in relative positioning.</p>
-            <p style="color: rgb(142, 0, 0); text-decoration: 1px solid underline;">
+            <p style="color: rgb(214, 122, 2); font-weight: 500;">⚝ <span style="text-decoration: 1px solid underline;">Absolute position</span> takes the element out of the normal document flow completely. No space is left in place of the actual element like it does in relative positioning.</p>
+            <p style="color: rgb(142, 0, 0);">
                 Absolute position by default 'absolutely' positions the element it is applied to. By that it means that it will take the 'body' as the 'parent' of the element. Not the actual parent element.<br>
-                To have a <span style="color: red; text-decoration: 1px double underline;">absolutely positioned child element</span> inside a parent element, the <span style="color: red; text-decoration: 1px double underline;">parent element</span> has not to be static but <span style="color: red; text-decoration: 1px double underline;">anything else (relative, absolute, sticky, fixed).</span>
+                <span style="font-size: 35px; font-weight: 500;">*</span> To have a <span style="color: red; text-decoration: 1px double underline;">absolutely positioned child element</span> inside a parent element, the <span style="color: red; text-decoration: 1px double underline;">parent element</span> has not to be static but <span style="color: red; text-decoration: 1px double underline;">anything else (relative, absolute, sticky, fixed).</span>
+                Then, the child element will take it's direct parent as reference to position itself. If the immediate parent is static then the child element will take the predecessor(non-static) to absolutely position itself and if no such predecessor element is found, the first line holds true.
             </p>
 
-            <p>⚝ Fixed position works and behaves like Absolute position only thing is that when the page is scrolled, the element still stays right where it was initially throughout the page.</p>
-            <p>⚝ Sticky positioning is essentially a combination of Relative and Fixed positioning. The element will be relatively positioned initially and then becomes fixed when the element is at the top of the parent while scrolling.</p>
+            <p>⚝ <span style="text-decoration: 1px solid underline;">Fixed position</span> works and behaves like Absolute position only thing is that when the page is scrolled, the element still stays right where it was initially throughout the page.</p>
+            <p>⚝ <span style="text-decoration: 1px solid underline;">Sticky positioning</span> is essentially a combination of Relative and Fixed positioning. The element will be relatively positioned initially and then becomes fixed when the element is at the top of the parent while scrolling.</p>
         </div>
     </body>
 </html>
