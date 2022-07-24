@@ -1,0 +1,104 @@
+* {
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+
+    background-color: rgb(35, 35, 35);
+    font-family: 'Segoe UI'; 
+    font-size: 45px;
+}
+
+a {
+    position: relative;
+    /* position relative allows for the span inside to dictate the size of the anchor tag */
+    padding: 15px 45px;
+    
+    background-color: rgb(55, 55, 55);
+    color: white;
+
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    transition: .25s;
+}
+
+a span {
+    position: relative;
+    z-index: 1;
+    margin-right: -10px;
+    /*! as spans are display inline, they automatically take up least possible space and adding this negative margin-right fixes the last letter letter-spacing issue */
+    /*+ and as margins aren't included in calculating dimensions of a element at hand, in the inspect tool we don't see any change while hovering on span but we do see the change when hovering on anchor as it is the parent and margin of child does affect space of relative parent  */
+}
+
+/* There is a Kevin Powell video on this but he uses SASS... */
+
+a:hover {
+    letter-spacing: 20px;
+    color: var(--clr);
+    background-color: var(--clr);
+    box-shadow: 0 0 35px var(--clr);
+}
+
+a:hover span {
+    margin-right: -20px;
+}
+
+a::before {
+    content: '';
+    position: absolute;
+    background-color: rgb(18, 18, 18);
+    inset: 2px;
+}
+
+a i {
+    position: absolute;
+    inset: 0;
+}
+
+a i::before {
+    content: '';
+    position: absolute;
+    top: -10px; left: 100%;
+    width: 20px; height: 20px;
+    
+    transform: translateX(-50%);
+
+    background-color: rgb(35, 35, 35);
+    border: 2px solid var(--clr);
+
+    transition: .5s;
+}
+
+a:hover i::before {
+    left: 0%;
+    transform: translateX(-50%) rotate(45deg);
+    box-shadow: 62px 62px var(--clr);
+}
+
+a i::after {
+    content: '';
+    position: absolute;
+    bottom: -11px; left: 0%;
+    width: 20px; height: 20px;
+    
+    transform: translateX(-50%);
+    
+    background-color: rgb(35, 35, 35);
+    border: 2px solid var(--clr);
+    
+    transition: .5s;
+}
+
+a:hover i::after {
+    left: 100%;
+    transform: translateX(-50%) rotate(-45deg);
+    box-shadow: 62px -62px var(--clr);
+}
