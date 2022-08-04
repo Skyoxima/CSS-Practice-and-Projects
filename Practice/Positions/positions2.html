@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Positions 2</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                /* remember, box-sizing borderbox considers only padding and border in dimension calculation, not margin! */
+            }
+
+            body {min-height: 100vh;}
+
+            #parent {
+                position: relative;
+                width: 200px; height: 200px;
+
+                left: 50%; 
+                /* Since divs are by default display block, left with percentages works because there is left space(the whole block) to calculate 50% of whereas... */
+                /* default top is 0 so 50% of that is still 0 resulting in no change (remember that in position relative the element's own default position is taken as reference and not parents)*/
+                
+                top: 50vh; left: 50vw; /* to center the div even in relative position */
+                /*! origin of the element still seems to be the top-left corner(TLC) (atleast for positioning!) in relative positioning */
+                
+                transform: translate(-50%, -50%);
+                /* now since this is a transform, center of the element was considered as the origin.
+                -50% for both X and Y axes tell that the center of the element should move to the top-left (left and up) corner of the element which is at the center of the page in the true sense 
+                thereby making the element at the center of the page */
+                
+                background-color: aquamarine;
+                /* animation: spin 5s linear infinite; */
+            }
+
+            #parent::before {
+                content: '';
+                position: absolute;
+                width: 20px; height: 20px;
+                background-color: red;
+            }
+            /* even pseudo-elements by default go to the top-left of the parent element */
+            
+            @keyframes spin {
+                0% {
+                    transform: translate(-50%, -50%) rotate(0deg);
+                }
+                100% {
+                    transform: translate(-50%, -50%) rotate(360deg);
+                    /*! By default the origin for all transforms is the center of the element */
+                }
+            }
+            /* new transforms seem to override old transforms... so the old transform has to be rewritten along with the new one */
+
+            #child1 {
+                position: relative;
+                /* here also positioned at the TLC of the parent by default */
+                top: 20px; left: 20px;
+                width: 60px; height: 60px;
+                background-color: grey;
+            }
+
+        </style>
+    </head>
+    
+    <body>
+        <div id="parent">
+            <div id="child1"></div>
+        </div>
+    </body>
+</html>
