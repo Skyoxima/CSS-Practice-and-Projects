@@ -10,59 +10,77 @@
 
     <body>
         <section>
-            <div class="container">
-                <div class="card">
-                    <div class="box">
-                        <div> <!--!Unknown as to why is used!-->
-                            <div class="percent">
-                                <svg>
-                                    <circle cx="70" cy="70" r="70"></circle>
-                                    <circle cx="70" cy="70" r="70"></circle>
-                                </svg>
-                                <div class="number">
-                                    <h2>90<span>%</span></h2>
+            <div class="main-container">
+                <div class="indv-container">
+                    <div class="card">
+                        <div class="box">
+                            <div> <!--|Unknown as to why is used|(my guess: z-index adjustment)-->
+                                <div class="percent">
+                                    <svg>
+                                        <circle cx="70" cy="70" r="70"></circle>
+                                        <circle cx="70" cy="70" r="70" id="filledCircle-card1"></circle>
+                                    </svg>
+                                    <div class="number" id="number-card1">
+                                        <h2>90<span>%</span></h2>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="text" style="--bgclr: hotpink;">Html</div>
                     </div>
-                    <div class="text" style="--bgclr: hotpink;">Html</div>
+                    <div class="changer" id="changer-1">
+                        <input type="text" name="changerbox" id="changerbox-1" class="changerbox" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                        <button class="changerbutton" id="changerbutton-1" onclick="changePercentage(this)">Change!</button>
+                    </div>
                 </div>
-
-                <div class="card">
-                    <div class="box">
-                        <div>
-                            <div class="percent">
-                                <svg>
-                                    <circle cx="70" cy="70" r="70"></circle>
-                                    <circle cx="70" cy="70" r="70"></circle>
-                                </svg>
-                                <div class="number">
-                                    <h2>82<span>%</span></h2>
+                
+                <div>
+                    <div class="card">
+                        <div class="box">
+                            <div>
+                                <div class="percent">
+                                    <svg>
+                                        <circle cx="70" cy="70" r="70"></circle>
+                                        <circle cx="70" cy="70" r="70" id="filledCircle-card2"></circle>
+                                    </svg>
+                                    <div class="number" id="number-card2">
+                                        <h2>82<span>%</span></h2>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="text" style="--bgclr: rgb(74, 192, 106);">CSS</div>
                     </div>
-                    <div class="text" style="--bgclr: rgb(74, 192, 106);">CSS</div>
+                    <div class="changer" id="changer-2">
+                        <input type="text" name="changerbox" id="changerbox-2" class="changerbox" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                        <button class="changerbutton" id="changerbutton-2" onclick="changePercentage(this)">Change!</button>
+                    </div>
                 </div>
-
-                <div class="card">
-                    <div class="box">
-                        <div>
-                            <div class="percent">
-                                <svg>
-                                    <circle cx="70" cy="70" r="70"></circle>
-                                    <circle cx="70" cy="70" r="70"></circle>
-                                </svg>
-                                <div class="number">
-                                    <h2>95<span>%</span></h2>
+                <div>
+                    <div class="card">
+                        <div class="box">
+                            <div>
+                                <div class="percent">
+                                    <svg>
+                                        <circle cx="70" cy="70" r="70"></circle>
+                                        <circle cx="70" cy="70" r="70" id="filledCircle-card3"></circle>
+                                    </svg>
+                                    <div class="number" id="number-card3">
+                                        <h2>95<span>%</span></h2>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="text" style="--bgclr: rgb(245, 178, 23);">Javascript</div>
                     </div>
-                    <div class="text" style="--bgclr: rgb(245, 178, 23);">Javascript</div>
+                    <div class="changer" id="changer-3">
+                        <input type="text" name="changerbox" id="changerbox-3" class="changerbox" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                        <button class="changerbutton" id="changerbutton-3" onclick="changePercentage(this)">Change!</button>
+                    </div>
                 </div>
             </div>
         </section>
         <footer style="background-color: black; color: rgb(140, 140, 140);"><h6>If wanted then JS can also be added to this to change the percentage by an input </h6></footer>
+        <script src="GMCPB.js"></script>
     </body>
 </html>
