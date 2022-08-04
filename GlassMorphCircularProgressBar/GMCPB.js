@@ -8,10 +8,6 @@ function changePercentage(buttonElement) {
         newPercent = 100;
         inputBox.value = 100;
         inputBox.style.borderBottom = "2px solid gold";
-    } else if(newPercent < 0) {
-        newPercent = 0;
-        inputBox.value = 100;
-        inputBox.style.borderBottom = "2px solid gold";
     } else {
         inputBox.style.borderBottom = "2px solid red";
     }
