@@ -14,6 +14,10 @@ body {
     background: #091921;
 }
 
+body.light {
+    background: #d1dae3;
+}
+
 .clock {
     width: 350px; height: 350px;
 
@@ -21,16 +25,27 @@ body {
     justify-content: center;
     align-items: center;
     
-    background: url(clock.png);
+    background: #091921 url(clock.png);
     background-size: cover;
 
     border: 4px solid #091921;
     border-radius: 50%;
-    box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05),
-                inset 0 -15px 15px rgba(255, 255, 255, 0.05),
-                0 15px 15px rgba(0, 0, 0, 0.3),
-                inset 0 15px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.05),
+                20px 20px 20px rgba(0, 0, 0, 0.3),
+                inset -8px -8px 15px rgba(255, 255, 255, 0.05),
+                inset 20px 20px 20px rgba(0, 0, 0, 0.3);
 
+}
+
+body.light .clock {
+    background: #d1dae3 url(clock.png);
+    background-size: cover;
+
+    border: 4px solid #cad3dc;
+    box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.5),
+                10px 10px 10px rgba(0, 0, 0, 0.1),
+                inset -8px -8px 15px rgba(255, 255, 255, 0.5),
+                inset 10px 10px 10px rgba(0, 0, 0, 0.1);
 }
 
 .clock::before {
@@ -40,6 +55,10 @@ body {
     background: #fff;
     border-radius: 50%;
     z-index: 10000;
+}
+
+body.light .clock::before {
+    background: #008eff;
 }
 
 .clock .hour,
@@ -75,6 +94,10 @@ body {
     z-index: 10;
     border-radius: 6px 6px 0 0;
 }
+body.light .hr::before {
+    background: rgb(255, 0, 102);
+}
+
 .min::before {
     content: '';
     position: absolute;
@@ -83,6 +106,11 @@ body {
     z-index: 11;
     border-radius: 6px 6px 0 0;
 }
+
+body.light .min::before {
+    background: #091921;
+}
+
 .sec::before {
     content: '';
     position: absolute;
@@ -90,4 +118,37 @@ body {
     background: rgb(83, 167, 247);
     z-index: 12;
     border-radius: 6px 6px 0 0;
+}
+
+.toggle {
+    position: absolute;
+    top: 30px; right: 150px;
+    width: 20px; height: 20px;
+    display: flex;
+    align-items: center;
+    
+    font-size: 18px;
+    font-family: consolas;
+    color: #d1dae3;
+    
+    border-radius: 50%;
+    background: #d1dae3;
+
+    cursor: pointer;
+}
+
+.toggle::before {
+    content: 'Light Mode';
+    position: absolute;
+    left: 25px;
+    white-space: nowrap;
+}
+
+body.light .toggle {
+    background: #091921;
+    color: #091921;
+}
+
+body.light .toggle::before {
+    content: 'Dark Mode';
 }
