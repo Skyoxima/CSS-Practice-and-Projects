@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Position-Flexbox relation</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body {
+                min-height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            #div-1 {
+                position: absolute;
+                /* flexbox automatically uses the center of flexitems to position them initially */
+                /* if a positioned flex-item is given a top-left-down-right then flexbox's positioning of that item is overridden */
+                width: 200px; height: 200px;
+                background-color: thistle;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            #div-2 {
+                position: absolute;
+                width: 100px; height: 100px;
+                background-color: burlywood;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="div-1">
+            <div id="div-2"></div>
+        </div>
+    </body>
+</html>
