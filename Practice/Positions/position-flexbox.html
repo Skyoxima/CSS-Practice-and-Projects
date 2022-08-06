@@ -11,28 +11,47 @@
                 padding: 0;
                 box-sizing: border-box;
             }
+
             body {
                 min-height: 100vh;
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                gap: 50px;
+
+                background-color: rgb(19, 4, 30);
             }
+
             #div-1 {
                 position: absolute;
-                /* flexbox automatically uses the center of flexitems to position them initially */
-                /* if a positioned flex-item is given a top-left-down-right then flexbox's positioning of that item is overridden */
+                /* position: relative; */
+                
+                /* flexbox automatically uses the center of flex-items to position them initially */
+                /* if a flex-item is absolutely positioned, it is removed from the document flow as it should but still by default positioned using parent's flexbox settings. Changes occur when top, left, etc are applied to it */
                 width: 200px; height: 200px;
                 background-color: thistle;
 
                 display: flex;
                 justify-content: center;
                 align-items: center;
+
+                opacity: 0.5;
             }
 
             #div-2 {
                 position: absolute;
                 width: 100px; height: 100px;
                 background-color: burlywood;
+            }
+
+            #div-3 {
+                width: 100px; height: 100px;
+                background-color: chartreuse;
+            }
+
+            #div-4 {
+                width: 100px; height: 100px;
+                background-color: yellow;
             }
         </style>
     </head>
@@ -41,5 +60,7 @@
         <div id="div-1">
             <div id="div-2"></div>
         </div>
+        <div id="div-3"></div>
+        <div id="div-4"></div>
     </body>
 </html>
