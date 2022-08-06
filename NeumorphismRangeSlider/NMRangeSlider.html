@@ -10,7 +10,12 @@
     
     <body>
         <div class="box">
-            <input type="range" name="custom-range" id="custom-range" value="0" min="0" max="100" onmousemove="rangeSlider(this.value)">
+            <input type="range" 
+            name="custom-range" id="custom-range" 
+            value="0" min="0" max="100"
+            onmousemove="rangeSlider(this.value)" 
+            onchange="rangeSlider(this.value)">
+            <!-- onmousemove for drag and onchange for taps -->
             <span id="rangeValue">0</span>
         </div>
         <script src="NMRangeSlider.js"></script>
