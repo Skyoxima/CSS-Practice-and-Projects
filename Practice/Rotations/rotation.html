@@ -25,18 +25,58 @@
 
             div {
                 width: 100px; height: 100px;
+                
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
 
             div:nth-child(1) {
                 background: thistle;
+                transform: rotateX(30deg);
+                /* X-axis is left-right */
             }
-
+            
             div:nth-child(2) {
                 background: goldenrod;
+                transform: rotateY(30deg);
+                /* Y-axis is up-down */
             }
-
+            
             div:nth-child(3) {
                 background: tomato;
+                transform: rotateZ(30deg);
+                /* z-axis is towards-away (from the screen) */
+            }
+            
+            div:nth-child(1)::before {
+                content: '';
+                position: absolute;
+                width: 120px; height: 2px;
+                background-color: red;
+            }
+            /* To see the effect of display-flex on position absolute */
+            div:nth-child(1)::after {
+                content: '';
+                position: absolute;
+                width: 120px; height: 10px;
+                background-color: blue;
+                opacity: 0.25;
+                /* after is over before because of absolute positioning instead of being inline as display flex is active */
+            }
+
+            div:nth-child(2)::before {
+                content: '';
+                position: absolute;
+                width: 2px; height: 120px;
+                background-color: red;
+            }
+
+            div:nth-child(3)::before {
+                content: '';
+                position: absolute;
+                width: 2px; height: 2px;
+                background-color: blue;
             }
         </style>
     </head>
