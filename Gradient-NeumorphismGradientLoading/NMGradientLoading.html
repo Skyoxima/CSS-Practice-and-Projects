@@ -11,5 +11,12 @@
         <div class="loader">
             <span></span>
         </div>
+        <div class="toggle" onclick="toggleMode()"></div>
+        <script>
+            function toggleMode () {
+                const body = document.querySelector('body');
+                body.classList.toggle('light');
+            }
+        </script>
     </body>
 </html>
