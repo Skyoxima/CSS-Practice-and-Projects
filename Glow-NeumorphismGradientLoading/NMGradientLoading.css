@@ -29,7 +29,7 @@ body {
                 10px 10px 10px rgba(0, 0, 0, 0.4),
                 inset -5px -5px 5px rgba(255, 255, 255, 0.2),
                 inset 10px 10px 10px rgba(0, 0, 0, 0.4);
-            }
+}
             
 .loader::before {
     content: '';
@@ -59,9 +59,11 @@ body {
     position: absolute;
     top: 50px; right: 50px;
     width: 75px; height: 50px;
+    border-radius: 25px;
 
     display: flex; justify-content: center; align-items: center;
     background: #f1f1f1;
+    background: url();
 }
 
 .toggle::before {
@@ -69,7 +71,33 @@ body {
     position: absolute;
     z-index: -1;
     width: 81px; height: 56px;
+    border-radius: 23px;
     background: linear-gradient(#14ffe9, #ffeb3b, #ff00e0);
+}
+
+.toggle::after {
+    visibility: hidden;
+    content:'Light Mode';
+    position: absolute;
+    padding: 5px 10px;
+    z-index: -1;
+
+    background: #240229;
+    border: 2px solid #f1f1f1;
+    border-radius: 16px;
+    
+    font-size: 12px;
+    font-family: 'Poppins', sans-serif;
+    white-space: nowrap;
+    color: #f1f1f1;
+
+    transition: transform 0.25s, visibility 0.05s;
+}
+
+.toggle:hover::after {
+    visibility: visible;
+    transform: translateY(60px);
+    transition: transform 0.25s, visibility 0.05s;
 }
 
 /* <- Light Mode -> =============================================================================================================================== */
@@ -80,20 +108,45 @@ body.light {
 body.light .loader {
     border: 4px solid #f1f1f1;
     box-shadow: -10px -10px 10px rgba(255, 255, 255, 1),
-                10px 10px 10px rgba(0, 0, 0, 0.2),
-                inset -10px -10px 15px rgba(255, 255, 255, 0.4),
-                inset 10px 10px 10px rgba(0, 0, 0, 0.2);
+    10px 10px 10px rgba(0, 0, 0, 0.2),
+    inset -10px -10px 15px rgba(255, 255, 255, 0.4),
+    inset 10px 10px 10px rgba(0, 0, 0, 0.2);
 }
 
 body.light .loader::before {
     background: #f1f1f1;
     border: 2px solid #f1f1f1;
     box-shadow: inset -10px -10px 10px rgba(255, 255, 255, 0.5),
-                inset 10px 10px 10px rgba(0, 0, 0, 0.1);
+    inset 10px 10px 10px rgba(0, 0, 0, 0.1);
 }
 
 body.light .toggle {
     background: #240229;
+}
+
+body.light .toggle::after {
+    visibility: hidden;
+    content:'Dark Mode';
+    position: absolute;
+    padding: 5px 10px;
+    z-index: -1;
+    
+    background: #f1f1f1;
+    border: 2px solid #240229;
+    border-radius: 16px;
+    
+    font-size: 12px;
+    font-family: 'Poppins', sans-serif;
+    white-space: nowrap;
+    color: #240229;
+    
+    transition: transform 0.25s, visibility 0.05s;
+}
+
+body.light .toggle:hover::after {
+    visibility: visible;
+    transform: translateY(60px);
+    transition: transform 0.25s, visibility 0.5s;
 }
 
 /* <- Animation -> =============================================================================================================================== */
