@@ -44,6 +44,7 @@ body {
     top: 0; left: 0;
     width: 100%; height: 100%; /* PsE is covering the whole card but we clip out what we want to be visible. */
     
+    filter: brightness(.7);
     background: var(--beforeBgColor, #9bdc28);
     clip-path: circle(150px at 80% 20%); /*! New learning -> everything inside the path is visible and outside invisible*/
     /* center of the 150px radius circle is at 80% X-axis and 20% y-axis of the PsE */
