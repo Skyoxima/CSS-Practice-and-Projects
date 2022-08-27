@@ -34,6 +34,11 @@ function playSong() {
   playPause.innerHTML = '<ion-icon name="pause-outline"></ion-icon>';
 }
 
+audio.onended = () => {
+  pauseSong();
+  // nextSong();
+}
+
 function pauseSong() {
   songPlaying = false;
   audio.pause();
