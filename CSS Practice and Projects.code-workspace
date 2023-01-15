@@ -6,6 +6,7 @@
 	],
 	"settings": {
 		"emmet.triggerExpansionOnTab": true,
-		"emmet.useInlineCompletions": false
+		"emmet.useInlineCompletions": false,
+		"liveServer.settings.port": 5501
 	}
 }
